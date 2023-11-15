@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@300;500;700&display=swap");
+
+:root {
+  font-family: "Inter", sans-serif, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color-scheme: light dark;
+  background-color: hsl(0, 0%, 98%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --eerie-black: hsla(0, 0%, 12%, 1);
+  --night: hsla(0, 0%, 9%, 1);
+  --dark: hsl(0, 0%, 10%);
+  --light-gray: hsl(0, 0%, 95%);
+  --dark-gray: hsl(0, 0%, 25%);
+
+  color: var(--dark);
+}
+Box sizing rules *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
+  margin: 0 0 1.5rem;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+
+html {
+  line-height: 1.5;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  color: var(--color-primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* styling for the buttons of the page */
+
+a {
+  color: var(--silver);
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  font-family: "Cinzel", serif;
+}
+
+main {
+  padding-top: 3rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main > .container,
+section > .container {
+  margin: 0 auto;
+  width: min(100%, 56rem);
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 45rem) {
+  main > .container {
+    padding: 0;
+  }
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 5rem;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 200, "opsz" 40;
+}
+
+header h1 {
+  font-size: 3rem;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.home .hero {
+  padding: 10rem 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+ul svg {
+  object-fit: cover;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+li > .item__img {
+  animation: fade-in 0.5s ease-in-out forwards;
+  background-color: var(--light-gray);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.item__img img {
+  /* width: 60%; */
+  max-width: 60%;
+  max-height: 60%;
+  mix-blend-mode: multiply;
+  object-fit: contain;
+}
+
+.item__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.item__text-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.item__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.item__desc {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.item__btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.item__btn:active {
+  scale: 0.9;
+  color: hsl(0, 0%, 60%);
+}
+
+.item__btn:active .material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+
+.item__btn.liked .material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+
+.loader {
+  display: none;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.loader svg {
+  width: 3rem;
+}
+
+.loader svg path:nth-child(2) {
+  animation-name: rotate;
+  transform-origin: 20px 20px;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+.loader.active {
+  display: flex;
+}
+
+.loader.active path:nth-child(2) {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate();
+    -webkit-transform: rotate();
+    -moz-transform: rotate();
+    -ms-transform: rotate();
+    -o-transform: rotate();
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
